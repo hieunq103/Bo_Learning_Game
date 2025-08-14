@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Học Tập Cho Bé</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Trang Menu Chính -->
+        <div id="menuScreen" class="menu-screen">
+            <div class="header">
+                <h1>🎓 GÓC HỌC TẬP CỦA BO</h1>
+                <p>Chọn chủ đề để bắt đầu học!</p>
+            </div>
+            <div class="content">
+                <div class="menu-grid">
+                    <button class="menu-item animals" onclick="startGame('animals')">
+                        🐶 Động Vật
+                    </button>
+                    <button class="menu-item numbers" onclick="startGame('numbers')">
+                        🌟 Đếm số
+                    </button>
+                    <button class="menu-item colors" onclick="startGame('colors')">
+                        🎨 MÀU SẮC
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trang Game -->
+        <div id="gameScreen" class="game-screen">
+            <div class="header">
+                <h1 id="categoryTitle">Game Học Tập</h1>
+                <div class="progress">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <div class="question-number" id="questionNumber"></div>
+            </div>
+            <div class="content">
+                <div class="question-text" id="questionText"></div>
+                <div class="options-container" id="optionsContainer"></div>
+                <div class="controls">
+                    <button class="btn btn-back" onclick="backToMenu()">⬅ Quay lại</button>
+                    <div class="navigation-buttons">
+                        <button class="btn btn-prev" id="prevButton" onclick="prevQuestion()" style="display: none;">⬅ Câu trước</button>
+                        <button class="btn btn-next" id="nextButton" onclick="nextQuestion()" style="display: none;">Câu tiếp theo ➡</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay và Feedback -->
+    <div class="overlay" id="overlay"></div>
+    <div class="feedback" id="feedback">
+        <h2 id="feedbackTitle"></h2>
+        <p id="feedbackText"></p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
